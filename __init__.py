@@ -1,0 +1,11 @@
+from .nodes import webdav_node
+
+NODE_CLASS_MAPPINGS = {
+    **webdav_node.NODE_CLASS_MAPPINGS
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+    **webdav_node.NODE_DISPLAY_NAME_MAPPINGS
+}
+
+__all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']
