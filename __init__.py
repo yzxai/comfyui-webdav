@@ -1,11 +1,11 @@
-from .nodes import webdav_node
+from .webdav_node import WebDAVUploadNode
 
 NODE_CLASS_MAPPINGS = {
-    **webdav_node.NODE_CLASS_MAPPINGS
+    "WebDAVUploadNode": WebDAVUploadNode
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
-    **webdav_node.NODE_DISPLAY_NAME_MAPPINGS
+    "WebDAVUploadNode": "WebDAV Upload"
 }
 
 __all__ = ['NODE_CLASS_MAPPINGS', 'NODE_DISPLAY_NAME_MAPPINGS']

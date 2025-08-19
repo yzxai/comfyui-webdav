@@ -36,7 +36,7 @@ def test_node_import():
 def test_node_initialization():
     """Test that the node class can be initialized."""
     try:
-        from nodes.webdav_node import WebDAVUploadNode
+        from webdav_node import WebDAVUploadNode
         
         # Test INPUT_TYPES
         input_types = WebDAVUploadNode.INPUT_TYPES()

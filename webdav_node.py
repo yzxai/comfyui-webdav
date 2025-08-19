@@ -169,3 +169,12 @@ class WebDAVUploadNode:
         except Exception as e:
             logger.error(f"Failed to upload image to {remote_path}: {str(e)}")
             return False
+
+# Register the node
+NODE_CLASS_MAPPINGS = {
+    "WebDAVUploadNode": WebDAVUploadNode
+}
+
+NODE_DISPLAY_NAME_MAPPINGS = {
+    "WebDAVUploadNode": "WebDAV Upload"
+}
