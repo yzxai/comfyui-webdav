@@ -59,6 +59,24 @@ The WebDAV Upload node takes generated images from ComfyUI, converts them to PNG
 - requests library
 - Pillow library
 
+## Privacy Protection
+
+When using image-to-image functionality in ComfyUI, uploaded images are typically saved to the local disk in the `input` folder. To protect your privacy, we provide a "Privacy Protect" node that prevents images from being saved to the local disk.
+
+### How It Works
+
+The Privacy Protect node processes images in memory without saving them to the local disk, then passes them directly to the next node in your workflow (such as the WebDAV Upload node). This ensures that sensitive images used in image-to-image workflows are not stored locally.
+
+### Usage
+
+1. Add the "Privacy Protect" node to your workflow
+2. Connect the output of an image generation node to the "images" input of the Privacy Protect node
+3. Connect the output of the Privacy Protect node to the WebDAV Upload node
+4. Enable privacy protection in the node settings
+5. Run your workflow
+
+Note: The Privacy Protect node works in conjunction with the WebDAV Upload node to ensure images are never saved to the local disk, but are instead uploaded directly to your WebDAV server.
+
 ## Troubleshooting
 
 If you encounter issues:
