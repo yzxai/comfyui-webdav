@@ -47,6 +47,12 @@
 - `remote_path`: 远程路径
 - `skip_ssl_verify`: 是否跳过SSL验证（布尔值）
 
+### 4.2 文件命名规则
+- 文件名格式：`comfyui_{timestamp}_{uuid}.png`
+- timestamp：毫秒级时间戳，确保时间唯一性
+- uuid：缩短的UUID，确保全局唯一性
+- 通过time+uuid的组合，确保文件名的绝对唯一性，避免上传冲突
+
 ### 4.2 输出参数
 - `images`: 输出的图像数据（用于预览）
 - `status`: 上传状态信息

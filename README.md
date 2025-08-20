@@ -34,6 +34,8 @@ This project provides a custom node for ComfyUI that allows users to upload gene
    - Remote Path: The directory on the WebDAV server where files should be uploaded
    - Skip SSL Verify: Check this if you're using a self-signed certificate
 
+4. Run your workflow. Images will be uploaded with unique filenames in the format: `comfyui_{timestamp}_{uuid}.png`
+
 4. Run your workflow
 
 ## Configuration Options

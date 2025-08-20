@@ -9,6 +9,8 @@ directly to a WebDAV server without saving them to the local disk.
 import os
 import io
 import logging
+import time
+import uuid
 from typing import Dict, Any, Tuple
 import requests
 from webdav4.client import Client
@@ -106,8 +108,10 @@ class WebDAVUploadNode:
                 # Convert ComfyUI image format to PIL Image
                 pil_image = self.tensor_to_pil(image)
                 
-                # Generate filename
-                filename = f"comfyui_image_{i+1}.png"
+                # Generate unique filename using time + uuid
+                timestamp = int(time.time() * 1000)  # Millisecond timestamp
+                unique_id = str(uuid.uuid4()).replace('-', '')[:8]  # Shortened UUID
+                filename = f"comfyui_{timestamp}_{unique_id}.png"
                 remote_file_path = os.path.join(remote_path, filename).replace("\\", "/")
                 
                 # Upload image
